@@ -1,6 +1,6 @@
 package edu.towson.cis.cosc442.project1.monopoly;
 
-public abstract class Cell {
+public abstract class Cell implements iOwnable {
 	private String name;
 	protected Player theOwner;
 	private boolean available = true;
@@ -9,6 +9,10 @@ public abstract class Cell {
 		return name;
 	}
 
+	/* (non-Javadoc)
+	 * @see edu.towson.cis.cosc442.project1.monopoly.iOwnable#getOwner()
+	 */
+	@Override
 	public Player getOwner() {
 		return theOwner;
 	}
@@ -23,6 +27,10 @@ public abstract class Cell {
 		this.name = name;
 	}
 
+	/* (non-Javadoc)
+	 * @see edu.towson.cis.cosc442.project1.monopoly.iOwnable#setOwner(edu.towson.cis.cosc442.project1.monopoly.Player)
+	 */
+	@Override
 	public void setOwner(Player owner) {
 		this.theOwner = owner;
 	}

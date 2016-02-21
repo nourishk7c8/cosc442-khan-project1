@@ -82,12 +82,12 @@ public class Player {
 		properties.clear();
 	}
     
-    public Cell[] getAllProperties() {
+    public iOwnable[] getAllProperties() {
         ArrayList<Cell> list = new ArrayList<Cell>();
         list.addAll(properties);
         list.addAll(utilities);
         list.addAll(railroads);
-        return (Cell[])list.toArray(new Cell[list.size()]);
+        return (iOwnable[])list.toArray(new Cell[list.size()]);
     }
 
 	public int getMoney() {
@@ -221,7 +221,7 @@ public class Player {
 	    buyProperty(cell, cell.getPrice());
 	}
 
-    public void sellProperty(Cell property, int amount) {
+    public void sellProperty(iOwnable property, int amount) {
         property.setOwner(null);
         if(property instanceof PropertyCell) {
             properties.remove(property);
